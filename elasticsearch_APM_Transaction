@@ -1,0 +1,918 @@
+annotations:
+  - kind: AnnotationQuery
+    spec:
+      builtIn: true
+      enable: true
+      hide: true
+      iconColor: rgba(0, 211, 255, 1)
+      name: Annotations & Alerts
+      query:
+        datasource:
+          name: grafana
+        group: grafana
+        kind: DataQuery
+        spec: {}
+        version: v0
+cursorSync: 'Off'
+description: Some short examples of building out a few panels that reflect core Transaction details from Elasticsearch APM.
+editable: true
+elements:
+  panel-10:
+    kind: Panel
+    spec:
+      data:
+        kind: QueryGroup
+        spec:
+          queries:
+            - kind: PanelQuery
+              spec:
+                hidden: false
+                query:
+                  datasource:
+                    name: adx38zymact1cb
+                  group: elasticsearch
+                  kind: DataQuery
+                  spec:
+                    alias: ''
+                    bucketAggs:
+                      - field: '@timestamp'
+                        id: '2'
+                        settings:
+                          interval: auto
+                        type: date_histogram
+                    metrics:
+                      - id: '1'
+                        type: count
+                    query: ''
+                    timeField: '@timestamp'
+                  version: v0
+                refId: A
+          queryOptions: {}
+          transformations: []
+      description: ''
+      id: 10
+      links: []
+      title: Span Name
+      vizConfig:
+        group: timeseries
+        kind: VizConfig
+        spec:
+          fieldConfig:
+            defaults:
+              color:
+                mode: palette-classic
+              custom:
+                axisBorderShow: false
+                axisCenteredZero: false
+                axisColorMode: text
+                axisLabel: ''
+                axisPlacement: auto
+                barAlignment: 0
+                barWidthFactor: 0.6
+                drawStyle: line
+                fillOpacity: 10
+                gradientMode: none
+                hideFrom:
+                  legend: false
+                  tooltip: false
+                  viz: false
+                insertNulls: false
+                lineInterpolation: linear
+                lineWidth: 1
+                pointSize: 5
+                scaleDistribution:
+                  type: linear
+                showPoints: never
+                showValues: false
+                spanNulls: true
+                stacking:
+                  group: A
+                  mode: none
+                thresholdsStyle:
+                  mode: 'off'
+              thresholds:
+                mode: absolute
+                steps:
+                  - color: green
+                    value: 0
+                  - color: red
+                    value: 80
+              unit: short
+            overrides: []
+          options:
+            annotations:
+              clustering: -1
+              multiLane: false
+            legend:
+              calcs: []
+              displayMode: list
+              placement: bottom
+              showLegend: true
+            tooltip:
+              hideZeros: false
+              mode: multi
+              sort: none
+        version: 13.0.1
+  panel-11:
+    kind: Panel
+    spec:
+      data:
+        kind: QueryGroup
+        spec:
+          queries:
+            - kind: PanelQuery
+              spec:
+                hidden: false
+                query:
+                  datasource:
+                    name: adx38zymact1cb
+                  group: elasticsearch
+                  kind: DataQuery
+                  spec:
+                    alias: ''
+                    bucketAggs:
+                      - field: '@timestamp'
+                        id: '2'
+                        settings:
+                          interval: auto
+                        type: date_histogram
+                    metrics:
+                      - id: '1'
+                        type: count
+                    query: ''
+                    timeField: '@timestamp'
+                  version: v0
+                refId: A
+          queryOptions: {}
+          transformations: []
+      description: ''
+      id: 11
+      links: []
+      title: Span Type
+      vizConfig:
+        group: timeseries
+        kind: VizConfig
+        spec:
+          fieldConfig:
+            defaults:
+              color:
+                mode: palette-classic
+              custom:
+                axisBorderShow: false
+                axisCenteredZero: false
+                axisColorMode: text
+                axisLabel: ''
+                axisPlacement: auto
+                barAlignment: 0
+                barWidthFactor: 0.6
+                drawStyle: line
+                fillOpacity: 10
+                gradientMode: none
+                hideFrom:
+                  legend: false
+                  tooltip: false
+                  viz: false
+                insertNulls: false
+                lineInterpolation: linear
+                lineWidth: 1
+                pointSize: 5
+                scaleDistribution:
+                  type: linear
+                showPoints: never
+                showValues: false
+                spanNulls: true
+                stacking:
+                  group: A
+                  mode: none
+                thresholdsStyle:
+                  mode: 'off'
+              thresholds:
+                mode: absolute
+                steps:
+                  - color: green
+                    value: 0
+                  - color: red
+                    value: 80
+              unit: short
+            overrides: []
+          options:
+            annotations:
+              clustering: -1
+              multiLane: false
+            legend:
+              calcs: []
+              displayMode: list
+              placement: bottom
+              showLegend: true
+            tooltip:
+              hideZeros: false
+              mode: multi
+              sort: none
+        version: 13.0.1
+  panel-12:
+    kind: Panel
+    spec:
+      data:
+        kind: QueryGroup
+        spec:
+          queries:
+            - kind: PanelQuery
+              spec:
+                hidden: false
+                query:
+                  datasource:
+                    name: fegjhv8oy3xtsa
+                  group: elasticsearch
+                  kind: DataQuery
+                  spec:
+                    alias: ''
+                    bucketAggs:
+                      - field: '@timestamp'
+                        id: '2'
+                        settings:
+                          interval: auto
+                        type: date_histogram
+                    metrics:
+                      - id: '1'
+                        type: count
+                    query: transaction.name:$transaction
+                    timeField: '@timestamp'
+                  version: v0
+                refId: A
+          queryOptions: {}
+          transformations: []
+      description: ''
+      id: 12
+      links: []
+      title: Count of transactions
+      vizConfig:
+        group: timeseries
+        kind: VizConfig
+        spec:
+          fieldConfig:
+            defaults:
+              color:
+                mode: palette-classic
+              custom:
+                axisBorderShow: false
+                axisCenteredZero: false
+                axisColorMode: text
+                axisLabel: ''
+                axisPlacement: auto
+                barAlignment: 0
+                barWidthFactor: 0.6
+                drawStyle: line
+                fillOpacity: 0
+                gradientMode: none
+                hideFrom:
+                  legend: false
+                  tooltip: false
+                  viz: false
+                insertNulls: false
+                lineInterpolation: linear
+                lineWidth: 1
+                pointSize: 5
+                scaleDistribution:
+                  type: linear
+                showPoints: auto
+                showValues: false
+                spanNulls: false
+                stacking:
+                  group: A
+                  mode: none
+                thresholdsStyle:
+                  mode: 'off'
+              thresholds:
+                mode: absolute
+                steps:
+                  - color: green
+                    value: 0
+                  - color: red
+                    value: 80
+            overrides: []
+          options:
+            annotations:
+              clustering: -1
+              multiLane: false
+            legend:
+              calcs: []
+              displayMode: list
+              placement: bottom
+              showLegend: true
+            tooltip:
+              hideZeros: false
+              mode: single
+              sort: none
+        version: 13.0.1
+  panel-13:
+    kind: Panel
+    spec:
+      data:
+        kind: QueryGroup
+        spec:
+          queries:
+            - kind: PanelQuery
+              spec:
+                hidden: false
+                query:
+                  datasource:
+                    name: fegjhv8oy3xtsa
+                  group: elasticsearch
+                  kind: DataQuery
+                  spec:
+                    alias: ''
+                    bucketAggs:
+                      - field: '@timestamp'
+                        id: '2'
+                        settings:
+                          interval: auto
+                        type: date_histogram
+                    metrics:
+                      - field: transaction.duration.us
+                        id: '1'
+                        settings:
+                          percents:
+                            - '50'
+                            - '95'
+                            - '99'
+                        type: percentiles
+                    query: ''
+                    timeField: '@timestamp'
+                  version: v0
+                refId: A
+          queryOptions: {}
+          transformations: []
+      description: ''
+      id: 13
+      links: []
+      title: Latência (p95, p99)
+      vizConfig:
+        group: timeseries
+        kind: VizConfig
+        spec:
+          fieldConfig:
+            defaults:
+              color:
+                mode: palette-classic
+              custom:
+                axisBorderShow: false
+                axisCenteredZero: false
+                axisColorMode: text
+                axisLabel: ''
+                axisPlacement: auto
+                barAlignment: 0
+                barWidthFactor: 0.6
+                drawStyle: line
+                fillOpacity: 0
+                gradientMode: none
+                hideFrom:
+                  legend: false
+                  tooltip: false
+                  viz: false
+                insertNulls: false
+                lineInterpolation: linear
+                lineWidth: 1
+                pointSize: 5
+                scaleDistribution:
+                  type: linear
+                showPoints: auto
+                showValues: false
+                spanNulls: false
+                stacking:
+                  group: A
+                  mode: none
+                thresholdsStyle:
+                  mode: 'off'
+              thresholds:
+                mode: absolute
+                steps:
+                  - color: green
+                    value: 0
+                  - color: red
+                    value: 80
+            overrides: []
+          options:
+            annotations:
+              clustering: -1
+              multiLane: false
+            legend:
+              calcs: []
+              displayMode: list
+              placement: bottom
+              showLegend: true
+            tooltip:
+              hideZeros: false
+              mode: single
+              sort: none
+        version: 13.0.1
+  panel-4:
+    kind: Panel
+    spec:
+      data:
+        kind: QueryGroup
+        spec:
+          queries:
+            - kind: PanelQuery
+              spec:
+                hidden: false
+                query:
+                  datasource:
+                    name: adx38zymact1cb
+                  group: elasticsearch
+                  kind: DataQuery
+                  spec:
+                    alias: ''
+                    bucketAggs:
+                      - field: '@timestamp'
+                        id: '2'
+                        settings:
+                          interval: auto
+                        type: date_histogram
+                    metrics:
+                      - id: '1'
+                        type: count
+                    query: transaction.name:$transaction
+                    timeField: '@timestamp'
+                  version: v0
+                refId: B
+          queryOptions: {}
+          transformations: []
+      description: ''
+      id: 4
+      links: []
+      title: Transaction Duration
+      vizConfig:
+        group: timeseries
+        kind: VizConfig
+        spec:
+          fieldConfig:
+            defaults:
+              color:
+                mode: palette-classic
+              custom:
+                axisBorderShow: false
+                axisCenteredZero: false
+                axisColorMode: text
+                axisLabel: ''
+                axisPlacement: auto
+                barAlignment: 0
+                barWidthFactor: 0.6
+                drawStyle: line
+                fillOpacity: 10
+                gradientMode: none
+                hideFrom:
+                  legend: false
+                  tooltip: false
+                  viz: false
+                insertNulls: false
+                lineInterpolation: linear
+                lineWidth: 1
+                pointSize: 5
+                scaleDistribution:
+                  type: linear
+                showPoints: never
+                showValues: false
+                spanNulls: true
+                stacking:
+                  group: A
+                  mode: none
+                thresholdsStyle:
+                  mode: 'off'
+              thresholds:
+                mode: absolute
+                steps:
+                  - color: green
+                    value: 0
+                  - color: red
+                    value: 80
+              unit: µs
+            overrides: []
+          options:
+            annotations:
+              clustering: -1
+              multiLane: false
+            legend:
+              calcs: []
+              displayMode: list
+              placement: bottom
+              showLegend: true
+            tooltip:
+              hideZeros: false
+              mode: multi
+              sort: desc
+        version: 13.0.1
+  panel-5:
+    kind: Panel
+    spec:
+      data:
+        kind: QueryGroup
+        spec:
+          queries:
+            - kind: PanelQuery
+              spec:
+                hidden: true
+                query:
+                  datasource:
+                    name: adx38zymact1cb
+                  group: elasticsearch
+                  kind: DataQuery
+                  spec:
+                    alias: ''
+                    bucketAggs:
+                      - $$hashKey: object:857
+                        field: transaction.name
+                        id: '2'
+                        settings:
+                          min_doc_count: 0
+                          order: desc
+                          orderBy: _count
+                          size: '10'
+                        type: terms
+                    metrics:
+                      - $$hashKey: object:1118
+                        field: select field
+                        id: '3'
+                        type: count
+                      - $$hashKey: object:1155
+                        field: transaction.duration.us
+                        id: '4'
+                        meta: {}
+                        settings:
+                          percents:
+                            - '95'
+                        type: percentiles
+                      - $$hashKey: object:1172
+                        field: transaction.duration.count
+                        id: '5'
+                        inlineScript: _value * doc["transaction.duration.us"].value
+                        meta: {}
+                        settings:
+                          script:
+                            inline: _value * doc["transaction.duration.us"].value
+                        type: avg
+                    query: ''
+                    timeField: '@timestamp'
+                  version: v0
+                refId: B
+            - kind: PanelQuery
+              spec:
+                hidden: false
+                query:
+                  datasource:
+                    name: adx38zymact1cb
+                  group: elasticsearch
+                  kind: DataQuery
+                  spec:
+                    alias: Impact
+                    bucketAggs:
+                      - $$hashKey: object:857
+                        field: transaction.name
+                        id: '2'
+                        settings:
+                          min_doc_count: 0
+                          order: desc
+                          orderBy: _count
+                          size: '10'
+                        type: terms
+                    metrics:
+                      - $$hashKey: object:1118
+                        field: transaction.duration.count
+                        id: '3'
+                        meta: {}
+                        settings: {}
+                        type: count
+                    query: ''
+                    timeField: '@timestamp'
+                  version: v0
+                refId: A
+          queryOptions: {}
+          transformations: []
+      description: ''
+      id: 5
+      links: []
+      title: Transactions
+      vizConfig:
+        group: table
+        kind: VizConfig
+        spec:
+          fieldConfig:
+            defaults:
+              custom:
+                align: auto
+                cellOptions:
+                  type: auto
+                filterable: false
+                footer:
+                  reducers: []
+                inspect: false
+              thresholds:
+                mode: absolute
+                steps:
+                  - color: green
+                    value: 0
+                  - color: red
+                    value: 80
+              unit: short
+            overrides: []
+          options:
+            cellHeight: sm
+            showHeader: true
+        version: 13.0.1
+  panel-9:
+    kind: Panel
+    spec:
+      data:
+        kind: QueryGroup
+        spec:
+          queries:
+            - kind: PanelQuery
+              spec:
+                hidden: false
+                query:
+                  datasource:
+                    name: adx38zymact1cb
+                  group: elasticsearch
+                  kind: DataQuery
+                  spec:
+                    alias: ''
+                    bucketAggs:
+                      - field: '@timestamp'
+                        id: '2'
+                        settings:
+                          interval: auto
+                        type: date_histogram
+                    metrics:
+                      - id: '1'
+                        type: count
+                    query: ''
+                    timeField: '@timestamp'
+                  version: v0
+                refId: A
+          queryOptions: {}
+          transformations: []
+      description: ''
+      id: 9
+      links: []
+      title: Span Subtype
+      vizConfig:
+        group: timeseries
+        kind: VizConfig
+        spec:
+          fieldConfig:
+            defaults:
+              color:
+                mode: palette-classic
+              custom:
+                axisBorderShow: false
+                axisCenteredZero: false
+                axisColorMode: text
+                axisLabel: ''
+                axisPlacement: auto
+                barAlignment: 0
+                barWidthFactor: 0.6
+                drawStyle: line
+                fillOpacity: 10
+                gradientMode: none
+                hideFrom:
+                  legend: false
+                  tooltip: false
+                  viz: false
+                insertNulls: false
+                lineInterpolation: linear
+                lineWidth: 1
+                pointSize: 5
+                scaleDistribution:
+                  type: linear
+                showPoints: never
+                showValues: false
+                spanNulls: true
+                stacking:
+                  group: A
+                  mode: none
+                thresholdsStyle:
+                  mode: 'off'
+              thresholds:
+                mode: absolute
+                steps:
+                  - color: green
+                    value: 0
+                  - color: red
+                    value: 80
+              unit: short
+            overrides: []
+          options:
+            annotations:
+              clustering: -1
+              multiLane: false
+            legend:
+              calcs: []
+              displayMode: list
+              placement: bottom
+              showLegend: true
+            tooltip:
+              hideZeros: false
+              mode: multi
+              sort: none
+        version: 13.0.1
+layout:
+  kind: GridLayout
+  spec:
+    items:
+      - kind: GridLayoutItem
+        spec:
+          element:
+            kind: ElementReference
+            name: panel-4
+          height: 10
+          width: 12
+          x: 0
+          'y': 0
+      - kind: GridLayoutItem
+        spec:
+          element:
+            kind: ElementReference
+            name: panel-5
+          height: 10
+          width: 12
+          x: 12
+          'y': 0
+      - kind: GridLayoutItem
+        spec:
+          element:
+            kind: ElementReference
+            name: panel-11
+          height: 11
+          width: 6
+          x: 0
+          'y': 10
+      - kind: GridLayoutItem
+        spec:
+          element:
+            kind: ElementReference
+            name: panel-9
+          height: 11
+          width: 6
+          x: 6
+          'y': 10
+      - kind: GridLayoutItem
+        spec:
+          element:
+            kind: ElementReference
+            name: panel-10
+          height: 11
+          width: 12
+          x: 12
+          'y': 10
+      - kind: GridLayoutItem
+        spec:
+          element:
+            kind: ElementReference
+            name: panel-12
+          height: 8
+          width: 12
+          x: 0
+          'y': 21
+      - kind: GridLayoutItem
+        spec:
+          element:
+            kind: ElementReference
+            name: panel-13
+          height: 8
+          width: 12
+          x: 12
+          'y': 21
+links:
+  - asDropdown: true
+    icon: external link
+    includeVars: false
+    keepTime: false
+    tags:
+      - elasticsearch
+    targetBlank: false
+    title: APM
+    tooltip: ''
+    type: dashboards
+liveNow: false
+preload: false
+tags:
+  - elasticsearch
+timeSettings:
+  autoRefresh: ''
+  autoRefreshIntervals:
+    - 5s
+    - 10s
+    - 30s
+    - 1m
+    - 5m
+    - 15m
+    - 30m
+    - 1h
+    - 2h
+    - 1d
+  fiscalYearStartMonth: 0
+  from: now-15m
+  hideTimepicker: false
+  timezone: browser
+  to: now
+title: Elasticsearch APM - Transactions
+variables:
+  - kind: DatasourceVariable
+    spec:
+      allowCustomValue: true
+      current:
+        text: ''
+        value: ''
+      hide: dontHide
+      includeAll: false
+      multi: false
+      name: Filters
+      options: []
+      pluginId: elasticsearch
+      refresh: onDashboardLoad
+      regex: /elasticsearch-cloud-trace/
+      skipUrlSync: false
+  - kind: QueryVariable
+    spec:
+      allowCustomValue: true
+      current:
+        text:
+          - magnum-pix-runtime
+        value:
+          - magnum-pix-runtime
+      definition: '{"find": "terms", "field": "service.name"}'
+      hide: dontHide
+      includeAll: true
+      label: Service
+      multi: true
+      name: service
+      options: []
+      query:
+        datasource:
+          name: adx38zymact1cb
+        group: elasticsearch
+        kind: DataQuery
+        spec:
+          __legacyStringValue: '{"find": "terms", "field": "service.name"}'
+        version: v0
+      refresh: onDashboardLoad
+      regex: ''
+      regexApplyTo: value
+      skipUrlSync: false
+      sort: disabled
+  - kind: QueryVariable
+    spec:
+      allowCustomValue: true
+      current:
+        text:
+          - prd
+        value:
+          - prd
+      definition: '{"find": "terms", "field": "service.environment"}'
+      hide: dontHide
+      includeAll: true
+      label: environment
+      multi: true
+      name: environment
+      options: []
+      query:
+        datasource:
+          name: adx38zymact1cb
+        group: elasticsearch
+        kind: DataQuery
+        spec:
+          __legacyStringValue: '{"find": "terms", "field": "service.environment"}'
+        version: v0
+      refresh: onDashboardLoad
+      regex: ''
+      regexApplyTo: value
+      skipUrlSync: false
+      sort: disabled
+  - kind: QueryVariable
+    spec:
+      allowCustomValue: true
+      current:
+        text:
+          - All
+        value:
+          - $__all
+      definition: '{"find": "terms", "field": "transaction.name"}'
+      hide: dontHide
+      includeAll: true
+      label: Transaction
+      multi: true
+      name: transaction
+      options: []
+      query:
+        datasource:
+          name: adx38zymact1cb
+        group: elasticsearch
+        kind: DataQuery
+        spec:
+          __legacyStringValue: '{"find": "terms", "field": "transaction.name"}'
+        version: v0
+      refresh: onDashboardLoad
+      regex: ''
+      regexApplyTo: value
+      skipUrlSync: false
+      sort: alphabeticalAsc
+
